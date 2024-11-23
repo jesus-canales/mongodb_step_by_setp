@@ -9,7 +9,7 @@ db.users.insertMany([
     {
         "nombre": "Juan Pérez",
         "edad": 30,
-        "correo": "juan.perez@example.com",
+        "correo": "juan.perez@gmail.com",
         "direcciones": [
             { "tipo": "casa", "direccion": "123 Calle Principal, Lima, Perú" },
             { "tipo": "trabajo", "direccion": "456 Avenida Secundaria, Lima, Perú" }
@@ -74,12 +74,11 @@ db.users.insertMany([
             { "tipo": "móvil", "numero": "+51 987654325" },
             { "tipo": "fijo", "numero": "+51 123456783" }
         ],
-        "hobbies": ["ajedrez", "natación", "jardinería"]
+        "hobbies": ["ajedrez", "jardinería"]
     },
     {
         "nombre": "Sofía Ramírez",
         "edad": 24,
-        "correo": "sofia.ramirez@example.com",
         "direcciones": [
             { "tipo": "casa", "direccion": "555 Calle Once, Iquitos, Perú" },
             { "tipo": "trabajo", "direccion": "666 Avenida Doce, Iquitos, Perú" }
@@ -203,6 +202,7 @@ db.users.insertMany([
         "hobbies": ["pintura", "música"]
     },
     {
+        "_id": 250,
         "nombre": "Jesús Canales",
         "edad": 40,
         "correo": "jesus.canales@example.com",
