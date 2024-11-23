@@ -7,7 +7,7 @@ db.products.updateMany(
     {}, // sino se especifica condición el cambio será para todos los docs
     // Especificar el nuevo valor
     {
-        $set: {price: 3250}
+        $set: { price: 3250 }
     }
 )
 
