@@ -1,13 +1,13 @@
 // Empezamos a crear una base de datos
 use ("baticell_store")
 
-// Cambiar el nombre de Xiaomi por iPhone
+// Cambiar el nombre de Honor por Blackberry
 db.products.updateOne(
     // Qué documento va a actualizarse
-    { _id: ObjectId('6741f708c048351079dde2e6')},
+    { _id: ObjectId('674259a2a6ed4d82a0666cc5')},
     // Especificar el nuevo valor a cambiar
     {
-        $set: {name: "Oppo", price: 1850} // utilizamos operador para actualizar
+        $set: {name: "Blackberry", price: 2999} // utilizamos operador para actualizar
     }
 )
 
