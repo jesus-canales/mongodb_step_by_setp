@@ -1,10 +1,10 @@
-// Empezamos a crear una base de datos
+// Ponemos en uso la base de datos
 use ("sample_mflix")
 
-// Eliminar un atributo de la colección
+// Eliminar valores de atributo de la colección que cumplen una condición
 db.movies.updateMany(
-    {runtime: 111},
-    { $unset: { runtime: ''}}
+    { runtime: 111 },
+    { $unset: { runtime: ''}} // utilizamos un operador para actualizar varios documentos
 )
 
 // Listar todos los documentos de colección products
