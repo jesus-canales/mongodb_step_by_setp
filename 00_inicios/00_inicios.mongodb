@@ -10,5 +10,11 @@ db.getCollectionNames()
 // Listar documentos de una colección
 db.movies.find()
 
-// Cuantos documentos tiene movies
+// Cuantos documentos tiene una colección
 db.movies.find().count()
+
+// Listar documentos a través de una condición
+db.movies.find({countries: "USA"}).count()
+
+// Listar documentos de USA
+db.movies.find({countries: "USA"})
