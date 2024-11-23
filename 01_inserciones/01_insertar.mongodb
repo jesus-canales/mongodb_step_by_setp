@@ -1,0 +1,11 @@
+// Empezamos a crear una base de datos
+use ("baticell_store")
+
+// Agregar documento con su propio id
+db.products.insertOne({
+    name: "Honor",
+    price: 2150
+})
+
+// Listar todos los documentos de colección products
+db.products.find()

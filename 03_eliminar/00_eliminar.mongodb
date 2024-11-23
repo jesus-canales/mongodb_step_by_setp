@@ -1,0 +1,11 @@
+// Empezamos a crear una base de datos
+use ("sample_mflix")
+
+// Eliminar un atributo de la colección
+db.movies.updateMany(
+    {runtime: 111},
+    { $unset: { runtime: ''}}
+)
+
+// Listar todos los documentos de colección products
+db.movies.find()

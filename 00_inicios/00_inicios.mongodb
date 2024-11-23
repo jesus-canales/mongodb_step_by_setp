@@ -1,0 +1,25 @@
+// Poner en uso una base de datos
+use("sample_mflix")
+
+// Ver la base de datos en uso
+db.getName()
+
+// Lista las colecciones de la BD
+db.getCollectionNames()
+
+// Listar documentos de colección movies
+db.movies.find()
+
+// Listar documentos movies cuyo runtime es 178
+db.movies.find({runtime: 178})
+
+// Listar documentos de la comments
+db.comments.find()
+
+// Listar comentarios de John Bishop
+db.comments.find({name: "John Bishop"})
+
+
+
+
+

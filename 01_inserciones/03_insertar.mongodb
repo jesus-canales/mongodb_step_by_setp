@@ -1,0 +1,223 @@
+// Ponemos en uso la base de datos
+use("baticell_store")
+
+// Limpiamos la colección antes de iniciar
+db.users.drop()
+
+// Agregamos 15 documentos para el ejemplo
+db.users.insertMany([
+    {
+        "nombre": "Juan Pérez",
+        "edad": 30,
+        "correo": "juan.perez@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "123 Calle Principal, Lima, Perú" },
+            { "tipo": "trabajo", "direccion": "456 Avenida Secundaria, Lima, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654321" },
+            { "tipo": "fijo", "numero": "+51 123456789" }
+        ],
+        "hobbies": ["fútbol"]
+    },
+    {
+        "nombre": "Ana Gómez",
+        "edad": 28,
+        "correo": "ana.gomez@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "789 Calle Tercera, Arequipa, Perú" },
+            { "tipo": "trabajo", "direccion": "1011 Avenida Cuarta, Arequipa, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654322" },
+            { "tipo": "fijo", "numero": "+51 123456780" }
+        ],
+        "hobbies": ["pintura", "correr", "cine"]
+    },
+    {
+        "nombre": "Luis Martínez",
+        "edad": 35,
+        "correo": "luis.martinez@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "456 Calle Quinta, Cusco, Perú" },
+            { "tipo": "trabajo", "direccion": "789 Avenida Sexta, Cusco, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654323" },
+            { "tipo": "fijo", "numero": "+51 123456781" }
+        ],
+        "hobbies": ["cocina", "ciclismo", "música"]
+    },
+    {
+        "nombre": "María López",
+        "edad": 32,
+        "correo": "maria.lopez@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "111 Calle Séptima, Trujillo, Perú" },
+            { "tipo": "trabajo", "direccion": "222 Avenida Octava, Trujillo, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654324" },
+            { "tipo": "fijo", "numero": "+51 123456782" }
+        ],
+        "hobbies": ["yoga", "fotografía", "escritura"]
+    },
+    {
+        "nombre": "Carlos Fernández",
+        "edad": 27,
+        "correo": "carlos.fernandez@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "333 Calle Novena, Piura, Perú" },
+            { "tipo": "trabajo", "direccion": "444 Avenida Décima, Piura, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654325" },
+            { "tipo": "fijo", "numero": "+51 123456783" }
+        ],
+        "hobbies": ["ajedrez", "natación", "jardinería"]
+    },
+    {
+        "nombre": "Sofía Ramírez",
+        "edad": 24,
+        "correo": "sofia.ramirez@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "555 Calle Once, Iquitos, Perú" },
+            { "tipo": "trabajo", "direccion": "666 Avenida Doce, Iquitos, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654326" },
+            { "tipo": "fijo", "numero": "+51 123456784" }
+        ],
+        "hobbies": ["dibujo", "bailar", "juegos de mesa"]
+    },
+    {
+        "nombre": "Diego Torres",
+        "edad": 29,
+        "correo": "diego.torres@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "777 Calle Trece, Tacna, Perú" },
+            { "tipo": "trabajo", "direccion": "888 Avenida Catorce, Tacna, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654327" },
+            { "tipo": "fijo", "numero": "+51 123456785" }
+        ],
+        "hobbies": ["fotografía", "videojuegos", "viajar"]
+    },
+    {
+        "nombre": "Lucía Rivera",
+        "edad": 26,
+        "correo": "lucia.rivera@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "999 Calle Quince, Puno, Perú" },
+            { "tipo": "trabajo", "direccion": "1010 Avenida Dieciséis, Puno, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654328" },
+            { "tipo": "fijo", "numero": "+51 123456786" }
+        ],
+        "hobbies": ["escritura", "correr", "yoga"]
+    },
+    {
+        "nombre": "José Herrera",
+        "edad": 34,
+        "correo": "jose.herrera@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "1111 Calle Diecisiete, Chiclayo, Perú" },
+            { "tipo": "trabajo", "direccion": "1212 Avenida Dieciocho, Chiclayo, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654329" },
+            { "tipo": "fijo", "numero": "+51 123456787" }
+        ],
+        "hobbies": ["ciclismo", "cocina", "lectura"]
+    },
+    {
+        "nombre": "Gabriela Morales",
+        "edad": 31,
+        "correo": "gabriela.morales@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "1313 Calle Diecinueve, Huancayo, Perú" },
+            { "tipo": "trabajo", "direccion": "1414 Avenida Veinte, Huancayo, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654330" },
+            { "tipo": "fijo", "numero": "+51 123456788" }
+        ],
+        "hobbies": ["pintura", "cantar", "jardinería"]
+    },
+    {
+        "nombre": "Pedro Rojas",
+        "edad": 38,
+        "correo": "pedro.rojas@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "1515 Calle Veintiuno, Cusco, Perú" },
+            { "tipo": "trabajo", "direccion": "1616 Avenida Veintidós, Cusco, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654331" },
+            { "tipo": "fijo", "numero": "+51 123456789" }
+        ],
+        "hobbies": ["pesca", "fotografía", "cine"]
+    },
+    {
+        "nombre": "Raúl Salas",
+        "edad": 40,
+        "correo": "raul.salas@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "1717 Calle Veintitrés, Ayacucho, Perú" },
+            { "tipo": "trabajo", "direccion": "1818 Avenida Veinticuatro, Ayacucho, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654332" },
+            { "tipo": "fijo", "numero": "+51 123456780" }
+        ],
+        "hobbies": ["lectura", "viajar", "correr"]
+    },
+    {
+        "nombre": "Valeria Díaz",
+        "edad": 27,
+        "correo": "valeria.diaz@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "1919 Calle Veinticinco, Ica, Perú" },
+            { "tipo": "trabajo", "direccion": "2020 Avenida Veintiséis, Ica, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654333" },
+            { "tipo": "fijo", "numero": "+51 123456781" }
+        ],
+        "hobbies": ["pintura", "escalar", "música"]
+    },
+    {
+        "nombre": "Carmela Pérez",
+        "edad": 25,
+        "correo": "carmela.perez@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "1919 Calle Alamos, Ica, Perú" },
+            { "tipo": "trabajo", "direccion": "3030 Avenida El SOl, Ica, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654333" },
+            { "tipo": "fijo", "numero": "+51 123456781" }
+        ],
+        "hobbies": ["pintura", "música"]
+    },
+    {
+        "nombre": "Jesús Canales",
+        "edad": 40,
+        "correo": "jesus.canales@example.com",
+        "direcciones": [
+            { "tipo": "casa", "direccion": "7755 Calle Miraflores, Lima, Perú" },
+            { "tipo": "trabajo", "direccion": "1512 Carretera Panam. Sur, Cañete, Lima, Perú" }
+        ],
+        "telefonos": [
+            { "tipo": "móvil", "numero": "+51 987654333" },
+            { "tipo": "fijo", "numero": "+51 123456781" }
+        ],
+        "hobbies": ["tecnología", "música", "películas"]
+    },
+])
+
+// Hacemos el lista de los documentos agregados
+db.users.find()
+
