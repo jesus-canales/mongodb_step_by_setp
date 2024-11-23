@@ -23,5 +23,20 @@ db.products.insertMany([
     }
 ])
 
+// Agregar más de un documento
+db.products.insertMany([
+    {
+        name: "Honor",
+        price: 2450,
+        modelo: "Ultra HD"
+    },
+    {
+        _id: 4,
+        name: "Oppo",
+        price: '',
+        color: "verde"
+    }
+])
+
 // Listar todos los documentos de colección products
 db.products.find()
