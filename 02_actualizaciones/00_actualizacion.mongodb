@@ -21,5 +21,15 @@ db.products.updateOne(
     }
 )
 
+// Actualizar o modificar más de un atributo
+db.products.updateOne(
+    // Qué documento va a actualizarse
+    { _id: 3},
+    // Especificar el nuevo valor a cambiar
+    {
+        $set: {color: "Azul", price: 3150} // utilizamos operador para actualizar
+    }
+)
+
 // Listar todos los documentos de colección products
 db.products.find()
