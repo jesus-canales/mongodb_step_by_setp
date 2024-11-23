@@ -3,8 +3,13 @@ use ("baticell_store")
 
 // Eliminar un documento
 db.products.deleteOne(
-    {_id: ObjectId('6741f708c048351079dde2e6')} // condición para eliminar el documento
+    { _id: ObjectId('674259a2a6ed4d82a0666cc5') } // condición para eliminar el documento
 )
+
+db.products.deleteOne(
+    { _id: 1 } // condición para eliminar el documento
+)
+
 
 // Listar todos los documentos de colección products
 db.products.find()
