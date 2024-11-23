@@ -4,6 +4,16 @@ use ("baticell_store")
 // Cambiar el nombre de Xiaomi por iPhone
 db.products.updateOne(
     // Qué documento va a actualizarse
+    { _id: 1},
+    // Especificar el nuevo valor a cambiar
+    {
+        $set: {name: "iPhone"} // utilizamos operador para actualizar
+    }
+)
+
+// Actualizar o modificar más de un atributo
+db.products.updateOne(
+    // Qué documento va a actualizarse
     { _id: 2},
     // Especificar el nuevo valor a cambiar
     {
