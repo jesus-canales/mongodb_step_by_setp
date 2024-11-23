@@ -1,10 +1,18 @@
 // Empezamos a crear una base de datos
 use ("baticell_store")
 
-// Agregar documento con su propio id
+// Agregar documento con su propio id tipo número
 db.products.insertOne({
-    name: "Honor",
-    price: 2150
+    _id: 1,
+    name: "Nokia",
+    price: 1989
+})
+
+// Agregar documento con su propio id tipo cadena
+db.products.insertOne({
+    _id: "A001",
+    name: "Oppo",
+    price: 1758
 })
 
 // Listar todos los documentos de colección products
