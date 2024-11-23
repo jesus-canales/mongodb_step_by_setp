@@ -1,9 +1,9 @@
 // Empezamos a crear una base de datos
 use ("baticell_store")
 
-// Eliminar un documento
+// Eliminar varios documentos que cumplen una condición
 db.users.deleteMany(
-    {edad: 40} // condición para eliminar el documento
+    { edad: 40 } // condición para eliminar el documento
 )
 
 // Listar todos los documentos de colección products
