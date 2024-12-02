@@ -9,9 +9,9 @@ db.clients.insertMany([
     {
         "nombre": "Carlos",
         "apellidos": "Mendoza",
-        "email": "carlos.mendoza@example.com",
-        "telefono": "321654987",
-        "direccion": "Avenida Central 123, Ciudad A",
+        "email": "carlos.mendoza@gmail.com",
+        "telefono": "921654987",
+        "direccion": "Avenida Central 123, Breña",
         "fechaRegistro": ISODate("2024-01-15T00:00:00Z"),
         "preferencias": ["Caballero"],
         "historialCompras": [
@@ -22,9 +22,9 @@ db.clients.insertMany([
     {
         "nombre": "Sofía",
         "apellidos": "Ramírez",
-        "email": "sofia.ramirez@example.com",
+        "email": "sofia.ramirez@yahoo.com",
         "telefono": "987654123",
-        "direccion": "Calle Flores 45, Ciudad B",
+        "direccion": "Calle Flores 45, La Molina",
         "fechaRegistro": ISODate("2024-02-10T00:00:00Z"),
         "preferencias": ["Dama"],
         "historialCompras": [
@@ -35,9 +35,9 @@ db.clients.insertMany([
     {
         "nombre": "Miguel",
         "apellidos": "Díaz",
-        "email": "miguel.diaz@example.com",
-        "telefono": "654321789",
-        "direccion": "Calle Luna 89, Ciudad C",
+        "email": "miguel.diaz@gmail.com",
+        "telefono": "934321789",
+        "direccion": "Calle Luna 89, Breña",
         "fechaRegistro": ISODate("2024-01-20T00:00:00Z"),
         "preferencias": ["Caballero", "Niño"],
         "historialCompras": [
@@ -48,9 +48,9 @@ db.clients.insertMany([
     {
         "nombre": "Lucía",
         "apellidos": "Fernández",
-        "email": "lucia.fernandez@example.com",
-        "telefono": "123987456",
-        "direccion": "Avenida Sol 456, Ciudad D",
+        "email": "lucia.fernandez@outlook.com",
+        "telefono": "933398746",
+        "direccion": "Avenida Sol 456, Miraflores",
         "fechaRegistro": ISODate("2024-03-05T00:00:00Z"),
         "preferencias": ["Dama", "Niño"],
         "historialCompras": [
@@ -61,9 +61,9 @@ db.clients.insertMany([
     {
         "nombre": "Diego",
         "apellidos": "González",
-        "email": "diego.gonzalez@example.com",
-        "telefono": "789456123",
-        "direccion": "Calle Estrella 33, Ciudad E",
+        "email": "diego.gonzalez@yahoo.com",
+        "telefono": "989156123",
+        "direccion": "Calle Estrella 33, La Molina",
         "fechaRegistro": ISODate("2024-02-25T00:00:00Z"),
         "preferencias": ["Caballero"],
         "historialCompras": [
@@ -74,9 +74,9 @@ db.clients.insertMany([
     {
         "nombre": "Mariana",
         "apellidos": "Torres",
-        "email": "mariana.torres@example.com",
-        "telefono": "456789123",
-        "direccion": "Avenida Libertad 34, Ciudad F",
+        "email": "mariana.torres@gmail.com",
+        "telefono": "944789123",
+        "direccion": "Avenida Libertad 34, La Molina",
         "fechaRegistro": ISODate("2024-01-30T00:00:00Z"),
         "preferencias": ["Dama"],
         "historialCompras": [
@@ -87,9 +87,9 @@ db.clients.insertMany([
     {
         "nombre": "Alberto",
         "apellidos": "Gómez",
-        "email": "alberto.gomez@example.com",
-        "telefono": "654789321",
-        "direccion": "Calle Águilas 56, Ciudad G",
+        "email": "alberto.gomez@outlook.com",
+        "telefono": "964789321",
+        "direccion": "Calle Águilas 56, San Luis",
         "fechaRegistro": ISODate("2024-02-05T00:00:00Z"),
         "preferencias": ["Caballero"],
         "historialCompras": [
@@ -100,9 +100,9 @@ db.clients.insertMany([
     {
         "nombre": "Patricia",
         "apellidos": "Núñez",
-        "email": "patricia.nunez@example.com",
-        "telefono": "789123654",
-        "direccion": "Calle Flores 78, Ciudad H",
+        "email": "patricia.nunez@yahoo.com",
+        "telefono": "989123654",
+        "direccion": "Calle Flores 78, San Martín de Porres",
         "fechaRegistro": ISODate("2024-01-18T00:00:00Z"),
         "preferencias": ["Niño"],
         "historialCompras": [
@@ -113,9 +113,9 @@ db.clients.insertMany([
     {
         "nombre": "Roberto",
         "apellidos": "López",
-        "email": "roberto.lopez@example.com",
-        "telefono": "321456987",
-        "direccion": "Avenida Central 90, Ciudad I",
+        "email": "roberto.lopez@outlook.com",
+        "telefono": "941456987",
+        "direccion": "Avenida Central 90, Miraflores",
         "fechaRegistro": ISODate("2024-02-28T00:00:00Z"),
         "preferencias": ["Caballero", "Dama"],
         "historialCompras": [
@@ -126,9 +126,9 @@ db.clients.insertMany([
     {
         "nombre": "Laura",
         "apellidos": "Martínez",
-        "email": "laura.martinez@example.com",
-        "telefono": "123654789",
-        "direccion": "Calle Jardines 12, Ciudad J",
+        "email": "laura.martinez@yahoo.com",
+        "telefono": "993654789",
+        "direccion": "Calle Jardines 12, San Borja",
         "fechaRegistro": ISODate("2024-01-25T00:00:00Z"),
         "preferencias": ["Dama", "Niño"],
         "historialCompras": [

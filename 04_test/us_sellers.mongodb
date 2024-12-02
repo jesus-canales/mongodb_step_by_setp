@@ -1,0 +1,84 @@
+// Empezamos a crear una base de datos
+use("UrbanStyle_store")
+
+// Eliminar todos los documentos de colección sellers
+db.sellers.drop()
+
+// Insertar 8 documentos en colección sellers
+db.sellers.insertMany([
+    {
+        "nombre": "Laura",
+        "apellidos": "Sánchez",
+        "email": "laura.sanchez@urbanstyle.com",
+        "telefono": "992444666",
+        "sucursal": "Sucursal Sur",
+        "fechaIngreso": ISODate("2023-07-20T00:00:00Z"),
+        "metas": { "ventasMensuales": 12000, "clientesNuevos": 25 }
+    },
+    {
+        "nombre": "Diego",
+        "apellidos": "García",
+        "email": "diego.garcia@urbanstyle.com",
+        "telefono": "933555777",
+        "sucursal": "Sucursal Este",
+        "fechaIngreso": ISODate("2023-08-25T00:00:00Z"),
+        "metas": { "ventasMensuales": 9000, "clientesNuevos": 18 }
+    },
+    {
+        "nombre": "Elena",
+        "apellidos": "Ruiz",
+        "email": "elena.ruiz@urbanstyle.com",
+        "telefono": "984666888",
+        "sucursal": "Sucursal Oeste",
+        "fechaIngreso": ISODate("2023-09-30T00:00:00Z"),
+        "metas": { "ventasMensuales": 11000, "clientesNuevos": 22 }
+    },
+    {
+        "nombre": "María",
+        "apellidos": "López",
+        "email": "maria.lopez@urbanstyle.com",
+        "telefono": "955777999",
+        "sucursal": "Sucursal Norte",
+        "fechaIngreso": ISODate("2023-10-15T00:00:00Z"),
+        "metas": { "ventasMensuales": 8500, "clientesNuevos": 19 }
+    },
+    {
+        "nombre": "Carlos",
+        "apellidos": "González",
+        "email": "carlos.gonzalez@urbanstyle.com",
+        "telefono": "966888000",
+        "sucursal": "Sucursal Sur",
+        "fechaIngreso": ISODate("2023-11-05T00:00:00Z"),
+        "metas": { "ventasMensuales": 9500, "clientesNuevos": 21 }
+    },
+    {
+        "nombre": "Andrés",
+        "apellidos": "Pérez",
+        "email": "andres.perez@urbanstyle.com",
+        "telefono": "927999555",
+        "sucursal": "Sucursal Este",
+        "fechaIngreso": ISODate("2023-11-20T00:00:00Z"),
+        "metas": { "ventasMensuales": 10500, "clientesNuevos": 23 }
+    },
+    {
+        "nombre": "Claudia",
+        "apellidos": "Hernández",
+        "email": "claudia.hernandez@urbanstyle.com",
+        "telefono": "988111666",
+        "sucursal": "Sucursal Norte",
+        "fechaIngreso": ISODate("2023-12-01T00:00:00Z"),
+        "metas": { "ventasMensuales": 11000, "clientesNuevos": 24 }
+    },
+    {
+        "nombre": "Fernando",
+        "apellidos": "Jiménez",
+        "email": "fernando.jimenez@urbanstyle.com",
+        "telefono": "999222777",
+        "sucursal": "Sucursal Sur",
+        "fechaIngreso": ISODate("2024-01-10T00:00:00Z"),
+        "metas": { "ventasMensuales": 9800, "clientesNuevos": 20 }
+    }
+])
+
+// Cantidad de documentos insertados
+db.sellers.find().count()
