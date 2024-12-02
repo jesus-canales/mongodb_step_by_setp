@@ -1,0 +1,142 @@
+// Empezamos a crear una base de datos
+use("UrbanStyle_store")
+
+// Eliminar todos los documentos de colección clients
+db.clients.drop()
+
+// Insertar 10 documentos en colección products
+db.clients.insertMany([
+    {
+        "nombre": "Carlos",
+        "apellidos": "Mendoza",
+        "email": "carlos.mendoza@example.com",
+        "telefono": "321654987",
+        "direccion": "Avenida Central 123, Ciudad A",
+        "fechaRegistro": ISODate("2024-01-15T00:00:00Z"),
+        "preferencias": ["Caballero"],
+        "historialCompras": [
+            { "producto": "Camisa Formal", "fecha": ISODate("2024-02-01T00:00:00Z"), "cantidad": 3 },
+            { "producto": "Chaqueta de Invierno", "fecha": ISODate("2024-03-05T00:00:00Z"), "cantidad": 1 }
+        ]
+    },
+    {
+        "nombre": "Sofía",
+        "apellidos": "Ramírez",
+        "email": "sofia.ramirez@example.com",
+        "telefono": "987654123",
+        "direccion": "Calle Flores 45, Ciudad B",
+        "fechaRegistro": ISODate("2024-02-10T00:00:00Z"),
+        "preferencias": ["Dama"],
+        "historialCompras": [
+            { "producto": "Blusa Casual", "fecha": ISODate("2024-02-20T00:00:00Z"), "cantidad": 2 },
+            { "producto": "Vestido de Verano", "fecha": ISODate("2024-03-15T00:00:00Z"), "cantidad": 1 }
+        ]
+    },
+    {
+        "nombre": "Miguel",
+        "apellidos": "Díaz",
+        "email": "miguel.diaz@example.com",
+        "telefono": "654321789",
+        "direccion": "Calle Luna 89, Ciudad C",
+        "fechaRegistro": ISODate("2024-01-20T00:00:00Z"),
+        "preferencias": ["Caballero", "Niño"],
+        "historialCompras": [
+            { "producto": "Sudadera Deportiva", "fecha": ISODate("2024-02-25T00:00:00Z"), "cantidad": 1 },
+            { "producto": "Pantalón Niño", "fecha": ISODate("2024-03-10T00:00:00Z"), "cantidad": 2 }
+        ]
+    },
+    {
+        "nombre": "Lucía",
+        "apellidos": "Fernández",
+        "email": "lucia.fernandez@example.com",
+        "telefono": "123987456",
+        "direccion": "Avenida Sol 456, Ciudad D",
+        "fechaRegistro": ISODate("2024-03-05T00:00:00Z"),
+        "preferencias": ["Dama", "Niño"],
+        "historialCompras": [
+            { "producto": "Falda de Verano", "fecha": ISODate("2024-03-15T00:00:00Z"), "cantidad": 1 },
+            { "producto": "Conjunto Deportivo", "fecha": ISODate("2024-04-05T00:00:00Z"), "cantidad": 1 }
+        ]
+    },
+    {
+        "nombre": "Diego",
+        "apellidos": "González",
+        "email": "diego.gonzalez@example.com",
+        "telefono": "789456123",
+        "direccion": "Calle Estrella 33, Ciudad E",
+        "fechaRegistro": ISODate("2024-02-25T00:00:00Z"),
+        "preferencias": ["Caballero"],
+        "historialCompras": [
+            { "producto": "Camisa Casual", "fecha": ISODate("2024-03-01T00:00:00Z"), "cantidad": 2 },
+            { "producto": "Abrigo de Invierno", "fecha": ISODate("2024-03-20T00:00:00Z"), "cantidad": 1 }
+        ]
+    },
+    {
+        "nombre": "Mariana",
+        "apellidos": "Torres",
+        "email": "mariana.torres@example.com",
+        "telefono": "456789123",
+        "direccion": "Avenida Libertad 34, Ciudad F",
+        "fechaRegistro": ISODate("2024-01-30T00:00:00Z"),
+        "preferencias": ["Dama"],
+        "historialCompras": [
+            { "producto": "Falda de Verano", "fecha": ISODate("2024-02-15T00:00:00Z"), "cantidad": 2 },
+            { "producto": "Abrigo de Invierno", "fecha": ISODate("2024-03-20T00:00:00Z"), "cantidad": 1 }
+        ]
+    },
+    {
+        "nombre": "Alberto",
+        "apellidos": "Gómez",
+        "email": "alberto.gomez@example.com",
+        "telefono": "654789321",
+        "direccion": "Calle Águilas 56, Ciudad G",
+        "fechaRegistro": ISODate("2024-02-05T00:00:00Z"),
+        "preferencias": ["Caballero"],
+        "historialCompras": [
+            { "producto": "Camisa Casual", "fecha": ISODate("2024-02-20T00:00:00Z"), "cantidad": 1 },
+            { "producto": "Sudadera Deportiva", "fecha": ISODate("2024-03-10T00:00:00Z"), "cantidad": 3 }
+        ]
+    },
+    {
+        "nombre": "Patricia",
+        "apellidos": "Núñez",
+        "email": "patricia.nunez@example.com",
+        "telefono": "789123654",
+        "direccion": "Calle Flores 78, Ciudad H",
+        "fechaRegistro": ISODate("2024-01-18T00:00:00Z"),
+        "preferencias": ["Niño"],
+        "historialCompras": [
+            { "producto": "Conjunto Deportivo", "fecha": ISODate("2024-02-25T00:00:00Z"), "cantidad": 2 },
+            { "producto": "Pantalón Niño", "fecha": ISODate("2024-03-05T00:00:00Z"), "cantidad": 1 }
+        ]
+    },
+    {
+        "nombre": "Roberto",
+        "apellidos": "López",
+        "email": "roberto.lopez@example.com",
+        "telefono": "321456987",
+        "direccion": "Avenida Central 90, Ciudad I",
+        "fechaRegistro": ISODate("2024-02-28T00:00:00Z"),
+        "preferencias": ["Caballero", "Dama"],
+        "historialCompras": [
+            { "producto": "Camisa Formal", "fecha": ISODate("2024-03-01T00:00:00Z"), "cantidad": 2 },
+            { "producto": "Blusa Casual", "fecha": ISODate("2024-03-10T00:00:00Z"), "cantidad": 1 }
+        ]
+    },
+    {
+        "nombre": "Laura",
+        "apellidos": "Martínez",
+        "email": "laura.martinez@example.com",
+        "telefono": "123654789",
+        "direccion": "Calle Jardines 12, Ciudad J",
+        "fechaRegistro": ISODate("2024-01-25T00:00:00Z"),
+        "preferencias": ["Dama", "Niño"],
+        "historialCompras": [
+            { "producto": "Vestido de Verano", "fecha": ISODate("2024-02-15T00:00:00Z"), "cantidad": 1 },
+            { "producto": "Conjunto Deportivo", "fecha": ISODate("2024-03-05T00:00:00Z"), "cantidad": 2 }
+        ]
+    }
+])    
+
+// Cantidad de documentos insertados
+db.clients.find().count()
