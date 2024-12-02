@@ -1,2 +1,7 @@
-// listo para constinuar
+// Empezamos a crear una base de datos
+use ("UrbanStyle_store")
 
+// Listar todos los documentos de colección products
+db.products.drop()
+
+// Listar todos los usuarios
