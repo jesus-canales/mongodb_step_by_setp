@@ -1,0 +1,162 @@
+// Empezamos a crear una base de datos
+use("baticell_store")
+
+// Eliminar todos los documentos de colección clients
+db.clients.drop()
+
+// Insertar 10 documentos en colección clients
+db.clients.insertMany([
+    {
+        "nombre": "Laura",
+        "apellidos": "Santos",
+        "email": "laura.santos@gmail.com",
+        "telefono": "999888777",
+        "direccion": "Calle Principal 45, San Luis",
+        "fechaRegistro": ISODate("2024-01-10T00:00:00Z"),
+        "modeloFavorito": "iPhone 13",
+        "historialCompras": [
+            { "producto": "iPhone 13", "fecha": ISODate("2024-02-01T00:00:00Z"), "cantidad": 1 }
+        ],
+        "suscripciones": ["Novedades Apple", "Ofertas Especiales"],
+        "activo": true,
+        "puntos": 200
+    },
+    {
+        "nombre": "Marcos",
+        "apellidos": "Gutiérrez",
+        "email": "marcos.gutierrez@yahoo.com",
+        "telefono": "988777666",
+        "direccion": "Avenida Central 67, Breña",
+        "fechaRegistro": ISODate("2024-01-15T00:00:00Z"),
+        "modeloFavorito": "Samsung Galaxy S21",
+        "historialCompras": [
+            { "producto": "Samsung Galaxy S21", "fecha": ISODate("2024-02-10T00:00:00Z"), "cantidad": 1 }
+        ],
+        "suscripciones": ["Novedades Samsung", "Ofertas Especiales"],
+        "activo": true,
+        "puntos": 250
+    },
+    {
+        "nombre": "Ana",
+        "apellidos": "López",
+        "email": "ana.lopez@gmail.com",
+        "telefono": "977666555",
+        "direccion": "Calle Secundaria 89, San Luis",
+        "fechaRegistro": ISODate("2024-02-05T00:00:00Z"),
+        "modeloFavorito": "Google Pixel 6",
+        "historialCompras": [
+            { "producto": "Google Pixel 6", "fecha": ISODate("2024-02-15T00:00:00Z"), "cantidad": 1 }
+        ],
+        "suscripciones": ["Novedades Google", "Ofertas Especiales"],
+        "activo": true,
+        "puntos": 300
+    },
+    {
+        "nombre": "José",
+        "apellidos": "Martínez",
+        "email": "jose.martinez@outlook.com",
+        "telefono": "966555444",
+        "direccion": "Avenida Libertad 101, San Borja",
+        "fechaRegistro": ISODate("2024-01-20T00:00:00Z"),
+        "modeloFavorito": "OnePlus 9 Pro",
+        "historialCompras": [
+            { "producto": "OnePlus 9 Pro", "fecha": ISODate("2024-02-20T00:00:00Z"), "cantidad": 1 }
+        ],
+        "suscripciones": ["Novedades OnePlus", "Ofertas Especiales"],
+        "activo": true,
+        "puntos": 350
+    },
+    {
+        "nombre": "Carmen",
+        "apellidos": "Díaz",
+        "email": "carmen.diaz@gmail.com",
+        "telefono": "955444333",
+        "direccion": "Calle Flores 111, San Luis",
+        "fechaRegistro": ISODate("2024-02-25T00:00:00Z"),
+        "modeloFavorito": "Xiaomi Mi 11",
+        "historialCompras": [
+            { "producto": "Xiaomi Mi 11", "fecha": ISODate("2024-03-01T00:00:00Z"), "cantidad": 1 }
+        ],
+        "suscripciones": ["Novedades Xiaomi", "Ofertas Especiales"],
+        "activo": true,
+        "puntos": 400
+    },
+    {
+        "nombre": "Daniela",
+        "apellidos": "García",
+        "email": "daniela.garcia@yahoo.com",
+        "telefono": "933222111",
+        "direccion": "Avenida Central 123, Breña",
+        "fechaRegistro": ISODate("2024-03-01T00:00:00Z"),
+        "modeloFavorito": "iPhone 12 Pro",
+        "historialCompras": [
+            { "producto": "iPhone 12 Pro", "fecha": ISODate("2024-03-10T00:00:00Z"), "cantidad": 1 }
+        ],
+        "suscripciones": ["Novedades Apple", "Ofertas Especiales"],
+        "activo": true,
+        "puntos": 180
+    },
+    {
+        "nombre": "Fernando",
+        "apellidos": "Rodríguez",
+        "email": "fernando.rodriguez@gmail.com",
+        "telefono": "944333222",
+        "direccion": "Calle Secundaria 456, Miraflores",
+        "fechaRegistro": ISODate("2024-03-05T00:00:00Z"),
+        "modeloFavorito": "Samsung Galaxy Note 20",
+        "historialCompras": [
+            { "producto": "Samsung Galaxy Note 20", "fecha": ISODate("2024-03-15T00:00:00Z"), "cantidad": 1 }
+        ],
+        "suscripciones": ["Novedades Samsung", "Ofertas Especiales"],
+        "activo": true,
+        "puntos": 220
+    },
+    {
+        "nombre": "Lucía",
+        "apellidos": "Pérez",
+        "email": "lucia.perez@yahoo.com",
+        "telefono": "955444333",
+        "direccion": "Boulevard Central 789, San Borja",
+        "fechaRegistro": ISODate("2024-03-10T00:00:00Z"),
+        "modeloFavorito": "Google Pixel 5a",
+        "historialCompras": [
+            { "producto": "Google Pixel 5a", "fecha": ISODate("2024-03-20T00:00:00Z"), "cantidad": 1 }
+        ],
+        "suscripciones": ["Novedades Google", "Ofertas Especiales"],
+        "activo": true,
+        "puntos": 260
+    },
+    {
+        "nombre": "Martín",
+        "apellidos": "Gómez",
+        "email": "martin.gomez@gmail.com",
+        "telefono": "996555444",
+        "direccion": "Avenida Libertad 101, Surco",
+        "fechaRegistro": ISODate("2024-03-15T00:00:00Z"),
+        "modeloFavorito": "OnePlus Nord 2",
+        "historialCompras": [
+            { "producto": "OnePlus Nord 2", "fecha": ISODate("2024-03-25T00:00:00Z"), "cantidad": 1 }
+        ],
+        "suscripciones": ["Novedades OnePlus", "Ofertas Especiales"],
+        "activo": true,
+        "puntos": 300
+    },
+    {
+        "nombre": "Cristina",
+        "apellidos": "Ramírez",
+        "email": "cristina.ramirez@outlook.com",
+        "telefono": "997666555",
+        "direccion": "Calle Flores 111, La Molina",
+        "fechaRegistro": ISODate("2024-03-20T00:00:00Z"),
+        "modeloFavorito": "Xiaomi Redmi Note 10",
+        "historialCompras": [
+            { "producto": "Xiaomi Redmi Note 10", "fecha": ISODate("2024-03-30T00:00:00Z"), "cantidad": 1 }
+        ],
+        "suscripciones": ["Novedades Xiaomi", "Ofertas Especiales"],
+        "activo": true,
+        "puntos": 340
+    }
+])
+
+// Cantidad de documentos insertados
+db.clients.find().count()
