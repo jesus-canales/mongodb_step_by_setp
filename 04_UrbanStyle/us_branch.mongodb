@@ -1,0 +1,72 @@
+// Empezamos a crear una base de datos
+use("UrbanStyle_store")
+
+// Eliminar todos los documentos de colección sucursal
+db.branch.drop()
+
+// Insertar 6 documentos en colección sucursal
+db.branch.insertMany([
+    {
+        "nombre": "Sucursal Norte",
+        "ubicacion": "Calle Norte 123",
+        "gerente": {
+            "nombre": "Carlos",
+            "apellidos": "López",
+            "email": "carlos.lopez@urbanstyle.com",
+            "celular": "973216549"
+        }
+    },
+    {
+        "nombre": "Sucursal Sur",
+        "ubicacion": "Calle Sur 456",
+        "gerente": {
+            "nombre": "María",
+            "apellidos": "Fernández",
+            "email": "maria.fernandez@urbanstyle.com",
+            "celular": "965498732"
+        }
+    },
+    {
+        "nombre": "Sucursal Este",
+        "ubicacion": "Calle Este 789",
+        "gerente": {
+            "nombre": "Pedro",
+            "apellidos": "Gómez",
+            "email": "pedro.gomez@urbanstyle.com",
+            "celular": "987321654"
+        }
+    },
+    {
+        "nombre": "Sucursal Oeste",
+        "ubicacion": "Calle Oeste 101",
+        "gerente": {
+            "nombre": "Lucía",
+            "apellidos": "Rodríguez",
+            "email": "lucia.rodriguez@urbanstyle.com",
+            "celular": "923874561"
+        }
+    },
+    {
+        "nombre": "Sucursal Centro",
+        "ubicacion": "Avenida Central 555",
+        "gerente": {
+            "nombre": "Jorge",
+            "apellidos": "Ramírez",
+            "email": "jorge.ramirez@urbanstyle.com",
+            "celular": "941561237"
+        }
+    },
+    {
+        "nombre": "Sucursal Playa",
+        "ubicacion": "Boulevard Playa 202",
+        "gerente": {
+            "nombre": "Ana",
+            "apellidos": "Martínez",
+            "email": "ana.martinez@urbanstyle.com",
+            "celular": "927894561"
+        }
+    }
+])
+
+// Cantidad de documentos insertados
+db.branch.find().count()
