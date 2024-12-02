@@ -1,0 +1,63 @@
+// Empezamos a crear una base de datos
+use("baticell_store")
+
+// Eliminar todos los documentos de colección sellers
+db.sellers.drop()
+db.vendedores.drop()
+
+// Insertar 10 documentos en colección sellers
+db.sellers.insertMany([
+    {
+        "nombre": "Miguel",
+        "apellidos": "Hernández",
+        "email": "miguel.hernandez@baticellstore.com",
+        "telefono": "921654987",
+        "sucursal": "Sucursal Norte",
+        "fechaIngreso": ISODate("2023-06-10T00:00:00Z"),
+        "metas": { "ventasMensuales": 50000, "clientesNuevos": 30 },
+        "productosPreferidos": ["iPhone 13", "Samsung Galaxy S21"]
+    },
+    {
+        "nombre": "Ana",
+        "apellidos": "González",
+        "email": "ana.gonzalez@baticellstore.com",
+        "telefono": "987654321",
+        "sucursal": "Sucursal Sur",
+        "fechaIngreso": ISODate("2023-07-15T00:00:00Z"),
+        "metas": { "ventasMensuales": 45000, "clientesNuevos": 25 },
+        "productosPreferidos": ["Google Pixel 6", "OnePlus 9 Pro"]
+    },
+    {
+        "nombre": "Carlos",
+        "apellidos": "Pérez",
+        "email": "carlos.perez@baticellstore.com",
+        "telefono": "954321987",
+        "sucursal": "Sucursal Este",
+        "fechaIngreso": ISODate("2023-08-20T00:00:00Z"),
+        "metas": { "ventasMensuales": 55000, "clientesNuevos": 35 },
+        "productosPreferidos": ["Xiaomi Mi 11", "Huawei P40 Pro"]
+    },
+    {
+        "nombre": "Elena",
+        "apellidos": "Martínez",
+        "email": "elena.martinez@baticellstore.com",
+        "telefono": "923456789",
+        "sucursal": "Sucursal Oeste",
+        "fechaIngreso": ISODate("2023-09-05T00:00:00Z"),
+        "metas": { "ventasMensuales": 60000, "clientesNuevos": 40 },
+        "productosPreferidos": ["Sony Xperia 1 III", "Oppo Find X3 Pro"]
+    },
+    {
+        "nombre": "Luis",
+        "apellidos": "Ramírez",
+        "email": "luis.ramirez@baticellstore.com",
+        "telefono": "989456123",
+        "sucursal": "Sucursal Norte",
+        "fechaIngreso": ISODate("2023-10-01T00:00:00Z"),
+        "metas": { "ventasMensuales": 48000, "clientesNuevos": 28 },
+        "productosPreferidos": ["Nokia 8.3 5G", "Asus ROG Phone 5"]
+    }
+])
+
+// Cantidad de documentos insertados
+db.sellers.find().count()
