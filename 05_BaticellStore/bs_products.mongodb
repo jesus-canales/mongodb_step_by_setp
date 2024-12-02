@@ -1,0 +1,203 @@
+// Empezamos a crear una base de datos
+use("baticell_store")
+
+// Eliminar todos los documentos de colección products
+db.products.drop()
+
+// Insertar 10 documentos en colección products
+db.products.insertMany([
+    {
+        "nombre": "Huawei P40 Pro",
+        "descripcion": "Huawei P40 Pro con 256GB de almacenamiento.",
+        "marca": "Huawei",
+        "especificaciones": {
+            "pantalla": "6.58 pulgadas",
+            "procesador": "Kirin 990",
+            "ram": "8 GB",
+            "almacenamiento": "256 GB",
+            "bateria": "4200 mAh",
+            "sistema_operativo": "Android 10"
+        },
+        "imei": "456789123012345",
+        "categoria": "Smartphone",
+        "cantidad": 45,
+        "precio_unitario": 999.99,
+        "coloresDisponibles": ["Negro", "Blanco", "Azul"],
+        "accesoriosIncluidos": ["Cargador", "Cable USB-C", "Funda"]
+    },
+    {
+        "nombre": "Sony Xperia 1 III",
+        "descripcion": "Sony Xperia 1 III con 256GB de almacenamiento.",
+        "marca": "Sony",
+        "especificaciones": {
+            "pantalla": "6.5 pulgadas",
+            "procesador": "Snapdragon 888",
+            "ram": "12 GB",
+            "almacenamiento": "256 GB",
+            "bateria": "4500 mAh",
+            "sistema_operativo": "Android 11"
+        },
+        "imei": "567890234512345",
+        "categoria": "Smartphone",
+        "cantidad": 20,
+        "precio_unitario": 1199.99,
+        "coloresDisponibles": ["Negro", "Violeta"],
+        "accesoriosIncluidos": ["Cargador", "Cable USB-C", "Auriculares"]
+    },
+    {
+        "nombre": "Oppo Find X3 Pro",
+        "descripcion": "Oppo Find X3 Pro con 256GB de almacenamiento.",
+        "marca": "Oppo",
+        "especificaciones": {
+            "pantalla": "6.7 pulgadas",
+            "procesador": "Snapdragon 888",
+            "ram": "12 GB",
+            "almacenamiento": "256 GB",
+            "bateria": "4500 mAh",
+            "sistema_operativo": "Android 11"
+        },
+        "imei": "678901345612345",
+        "categoria": "Smartphone",
+        "cantidad": 30,
+        "precio_unitario": 1099.99,
+        "coloresDisponibles": ["Negro", "Azul", "Plata"],
+        "accesoriosIncluidos": ["Cargador", "Cable USB-C", "Funda", "Auriculares"]
+    },
+    {
+        "nombre": "Nokia 8.3 5G",
+        "descripcion": "Nokia 8.3 5G con 128GB de almacenamiento.",
+        "marca": "Nokia",
+        "especificaciones": {
+            "pantalla": "6.81 pulgadas",
+            "procesador": "Snapdragon 765G",
+            "ram": "8 GB",
+            "almacenamiento": "128 GB",
+            "bateria": "4500 mAh",
+            "sistema_operativo": "Android 10"
+        },
+        "imei": "789012456712345",
+        "categoria": "Smartphone",
+        "cantidad": 25,
+        "precio_unitario": 649.99,
+        "coloresDisponibles": ["Azul", "Negro"],
+        "accesoriosIncluidos": ["Cargador", "Cable USB-C", "Manual"]
+    },
+    {
+        "nombre": "Asus ROG Phone 5",
+        "descripcion": "Asus ROG Phone 5 con 512GB de almacenamiento.",
+        "marca": "Asus",
+        "especificaciones": {
+            "pantalla": "6.78 pulgadas",
+            "procesador": "Snapdragon 888",
+            "ram": "16 GB",
+            "almacenamiento": "512 GB",
+            "bateria": "6000 mAh",
+            "sistema_operativo": "Android 11"
+        },
+        "imei": "890123567812345",
+        "categoria": "Smartphone",
+        "cantidad": 15,
+        "precio_unitario": 1299.99,
+        "coloresDisponibles": ["Negro", "Blanco"],
+        "accesoriosIncluidos": ["Cargador", "Cable USB-C", "Cooling Fan"]
+    },
+    {
+        "nombre": "Samsung Galaxy Note 20",
+        "descripcion": "Samsung Galaxy Note 20 con 256GB de almacenamiento.",
+        "marca": "Samsung",
+        "especificaciones": {
+            "pantalla": "6.7 pulgadas",
+            "procesador": "Exynos 990",
+            "ram": "8 GB",
+            "almacenamiento": "256 GB",
+            "bateria": "4300 mAh",
+            "sistema_operativo": "Android 10"
+        },
+        "imei": "123456780123456",
+        "categoria": "Smartphone",
+        "cantidad": 35,
+        "precio_unitario": 950.99,
+        "coloresDisponibles": ["Negro", "Bronce"],
+        "accesoriosIncluidos": ["Cargador", "Cable USB-C", "S Pen"]
+    },
+    {
+        "nombre": "iPhone 12 Pro",
+        "descripcion": "Apple iPhone 12 Pro con 256GB de almacenamiento.",
+        "marca": "Apple",
+        "especificaciones": {
+            "pantalla": "6.1 pulgadas",
+            "procesador": "A14 Bionic",
+            "ram": "6 GB",
+            "almacenamiento": "256 GB",
+            "bateria": "2815 mAh",
+            "sistema_operativo": "iOS 14"
+        },
+        "imei": "234567891234567",
+        "categoria": "Smartphone",
+        "cantidad": 50,
+        "precio_unitario": 1099.99,
+        "coloresDisponibles": ["Grafito", "Oro", "Plata", "Azul Pacífico"],
+        "accesoriosIncluidos": ["Cargador", "Cable USB-C"]
+    },
+    {
+        "nombre": "Xiaomi Redmi Note 10",
+        "descripcion": "Xiaomi Redmi Note 10 con 128GB de almacenamiento.",
+        "marca": "Xiaomi",
+        "especificaciones": {
+            "pantalla": "6.43 pulgadas",
+            "procesador": "Snapdragon 678",
+            "ram": "4 GB",
+            "almacenamiento": "128 GB",
+            "bateria": "5000 mAh",
+            "sistema_operativo": "Android 11"
+        },
+        "imei": "345678901234567",
+        "categoria": "Smartphone",
+        "cantidad": 40,
+        "precio_unitario": 249.99,
+        "coloresDisponibles": ["Verde", "Blanco", "Gris"],
+        "accesoriosIncluidos": ["Cargador", "Cable USB-C", "Funda"]
+    },
+    {
+        "nombre": "Google Pixel 5a",
+        "descripcion": "Google Pixel 5a con 128GB de almacenamiento.",
+        "marca": "Google",
+        "especificaciones": {
+            "pantalla": "6.34 pulgadas",
+            "procesador": "Snapdragon 765G",
+            "ram": "6 GB",
+            "almacenamiento": "128 GB",
+            "bateria": "4680 mAh",
+            "sistema_operativo": "Android 11"
+        },
+        "imei": "456789012345678",
+        "categoria": "Smartphone",
+        "cantidad": 30,
+        "precio_unitario": 449.99,
+        "coloresDisponibles": ["Negro"],
+        "accesoriosIncluidos": ["Cargador", "Cable USB-C", "Manual"]
+    },
+    {
+        "nombre": "OnePlus Nord 2",
+        "descripcion": "OnePlus Nord 2 con 128GB de almacenamiento.",
+        "marca": "OnePlus",
+        "especificaciones": {
+            "pantalla": "6.43 pulgadas",
+            "procesador": "Dimensity 1200-AI",
+            "ram": "8 GB",
+            "almacenamiento": "128 GB",
+            "bateria": "4500 mAh",
+            "sistema_operativo": "Android 11"
+        },
+        "imei": "567890123456789",
+        "categoria": "Smartphone",
+        "cantidad": 25,
+        "precio_unitario": 399.99,
+        "coloresDisponibles": ["Azul", "Gris"],
+        "accesoriosIncluidos": ["Cargador", "Cable USB-C", "Funda", "Auriculares"]
+    }
+])
+
+
+// Cantidad de documentos insertados
+db.products.find().count()
