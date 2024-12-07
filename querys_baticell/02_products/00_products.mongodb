@@ -1,0 +1,8 @@
+// Poner en uso la base de datos
+use ( "baticell_store" )
+
+// Listar los productos (products)
+db.products.find()
+
+// Contar los productos (products)
+db.products.find().count()
