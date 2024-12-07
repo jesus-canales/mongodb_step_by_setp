@@ -1,0 +1,16 @@
+// Poner en uso la base de datos
+use("baticell_store")
+
+// Listar clientes procedentes de San Luis o San Borja
+db.clients.find(
+    {
+        "direccion": { $regex: "San Luis|San Borja" }
+    }
+)
+
+// Cuantos clientes proceden de San Luis o San Borja
+db.clients.find(
+    {
+        "direccion": { $regex: "San Luis|San Borja" }
+    }
+).count()

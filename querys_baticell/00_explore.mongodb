@@ -1,0 +1,14 @@
+// Poner en uso la base de datos
+use ( "baticell_store" )
+
+// Listar colecciones de la base de datos
+db.getCollectionNames()
+
+// Listar los documentos de clients (clientes)
+db.clients.find().count()
+
+// Listar los documentos de sellers (vendedores)
+db.sellers.find().count()
+
+// Listar los documentos de products (productos)
+db.products.find().count()

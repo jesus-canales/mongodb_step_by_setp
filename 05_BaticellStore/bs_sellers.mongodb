@@ -3,7 +3,6 @@ use("baticell_store")
 
 // Eliminar todos los documentos de colección sellers
 db.sellers.drop()
-db.vendedores.drop()
 
 // Insertar 10 documentos en colección sellers
 db.sellers.insertMany([

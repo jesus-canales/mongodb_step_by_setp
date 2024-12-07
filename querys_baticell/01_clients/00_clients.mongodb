@@ -1,0 +1,16 @@
+// Poner en uso la base de datos
+use ( "baticell_store" )
+
+// Listar clientes (clients) procedentes de Miraflores
+db.clients.find(
+    {
+        "direccion": { $regex: "Miraflores" }
+    }
+)
+
+// Listar clientes procedentes de Surco
+db.clients.find(
+    {
+        "direccion": { $regex: "Surco" }
+    }
+).count()
