@@ -14,3 +14,6 @@ db.clients.find(
         "direccion": { $regex: "San Luis|San Borja" }
     }
 ).count()
+
+// Listar clientes procedentes de Breña o La Molina
+

@@ -1,0 +1,20 @@
+// Poner en uso la base de datos
+use("baticell_store")
+
+// Listar todos los clientes que no procedan de Breña o La Molina
+db.clients.find(
+    {
+        "direccion": {
+            $not: { $regex: "Breña|La Molina" }
+        }
+    }
+)
+
+// Listar todos los clientes que no procedan de San Luis o San Borja
+db.clients.find(
+    {
+        "direccion": {
+            $not: { $regex: "San Luis|San Borja" }
+        }
+    }
+)
