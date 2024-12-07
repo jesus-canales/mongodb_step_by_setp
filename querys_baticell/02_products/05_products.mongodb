@@ -1,0 +1,38 @@
+// Poner en uso la base de datos
+use("baticell_store")
+
+// Listar productos _id, nombre, descripción, marca y especificaciones
+// filtre cuya cantidad de ram sea 8GB, 
+// precio unitario menor a 800 
+// y cantidad mayor igual a 30
+// ordene en descendente por marca
+db.products.find(
+    {
+        "especificaciones.ram": "8 GB",
+        precio_unitario: { $lt: 800 },
+        cantidad: { $gte: 30 },
+    },
+    {
+        _id: 1,
+        nombre: 1,
+        descripcion: 1,
+        marca: 1,
+        especificaciones: 1,
+        precio_unitario: 1
+    }
+).count()
+
+/*   db.products.find(
+    {
+      "especificaciones.almacenamiento": "8 GB",
+      precio_unitario: { $lte: 800 },
+      cantidad: { $gte: 30 },
+    },
+    {
+      _id: 1,
+      nombre: 1,
+      descripcion: 1,
+      marca: 1,
+      especificaciones: 1
+    }
+  ).sort({marca: 1}); */
