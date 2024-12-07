@@ -13,6 +13,5 @@ db.products.find(
         especificaciones: 1,
         coloresDisponibles: 1,
         _id: 0
-
     } // aquí se establece que atributos se desean listar
 )

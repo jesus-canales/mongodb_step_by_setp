@@ -1,0 +1,15 @@
+// Poner en uso la base de datos
+use ( "baticell_store" )
+
+// Listar los productos cuyo almacenamiento es de 256 GB
+// Sólo deberá listar los atributos: nombre, descripción, marca y especificaciones
+db.products.find(
+    { "especificaciones.almacenamiento": "256 GB" }, // aquí se establece las condiciones
+    {
+        nombre: 1,
+        descripcion: 1,
+        marca: 1,
+        especificaciones: 1,
+        _id: 0
+    } // aquí se establece que atributos se desean listar
+)
