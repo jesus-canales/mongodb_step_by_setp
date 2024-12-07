@@ -1,0 +1,21 @@
+// Poner en uso la base de datos
+use("baticell_store")
+
+// Listar nombres, apellidos, email y suscripciones de clients (clientes) 
+// que no viven en Breña o La Molina
+// ordenar por apellidos de manera descendente
+db.clients.find(
+    {
+        "direccion": { $not: { $regex: "Breña|La Molina" } }
+    },
+    {
+        nombre: 1,
+        apellidos: 1,
+        email: 1,
+        suscripciones: 1,
+        _id: 0
+    }
+
+).sort({ apellidos: -1 })
+
+

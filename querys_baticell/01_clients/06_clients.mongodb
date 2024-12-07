@@ -1,0 +1,20 @@
+// Poner en uso la base de datos
+use("baticell_store")
+
+// Listar los clientes cuyos puntos estén comprendidos entre 200 y 300.
+// Considere visualizar sólo los campos: 
+// nombres, apellidos, modelo favorito, puntos y suscripciones. 
+// Ordene por fecha de registro de manera ascendente.
+db.clients.find(
+    {
+        puntos: { $gte: 200, $lte: 300 }
+    },
+    {
+        nombre: 1,
+        apellidos: 1,
+        modeloFavorito: 1,
+        fechaRegistro: 1,
+        puntos: 1,
+        suscripciones: 1
+    }
+).sort({ fechaRegistro: 1 })
