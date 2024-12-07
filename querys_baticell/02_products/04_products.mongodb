@@ -1,0 +1,23 @@
+// Poner en uso la base de datos
+use("baticell_store")
+
+// Listar productos con los siguientes atributos:
+// _id, nombre, descripción, marca y colores disponibles 
+// cuya capacidad de almacenamiento sea 256 GB y el precio sea menor o igual que 1000
+db.products.find(
+    {
+        $and: [
+            { "especificaciones.almacenamiento": "256 GB", },
+            { precio_unitario: { $lte: 1000 } }
+        ]
+    }, // aquí se establece las condiciones
+    {
+        nombre: 1,
+        descripcion: 1,
+        especificaciones: 1,
+        marca: 1,
+        coloresDisponibles: 1,
+        precio_unitario: 1,
+        _id: 0
+    } // aquí se establece que atributos se desean listar
+)
