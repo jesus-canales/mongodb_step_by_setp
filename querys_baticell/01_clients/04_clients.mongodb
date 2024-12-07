@@ -1,0 +1,40 @@
+// Poner en uso la base de datos
+use("baticell_store")
+
+// Listar clientes procedentes de San Luis o San Borja
+// sólo los atributos: nombre, apellidos, email y suscripciones
+// ordenado por nombres de forma ascendente
+db.clients.find(
+    {
+        direccion: { $regex: "San Luis|San Borja" }
+    },
+    {
+        nombre: 1,
+        apellidos: 1,
+        email: 1,
+        suscripciones: 1,
+        _id: 0
+    }
+).sort({ nombre: 1 }) // 1 (ascendente) | -1 (descendente)
+
+// Listar clientes procedentes de San Luis o San Borja
+// sólo los atributos: nombre, apellidos, email, suscripciones y puntos
+// ordenado de forma descendente por puntos
+db.clients.find(
+    {
+        direccion: { $regex: "San Luis|San Borja" }
+    },
+    {
+        nombre: 1,
+        apellidos: 1,
+        email: 1,
+        suscripciones: 1,
+        puntos: 1,
+        _id: 0
+    }
+).sort({ puntos: -1 })
+
+
+
+
+
