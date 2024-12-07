@@ -1,0 +1,29 @@
+// Poner en uso la base de datos
+use("baticell_store")
+
+// Listar productos: _id, nombre, descripción, marca, colores disponibles y precio unitario
+// filtre precio unitario menor o igual que 900 o color negro
+// pero no deben listarse o mostrarse los equipos de marca OnePlus
+db.products.find(
+    {
+        $and: [
+            {
+                $or: [
+                    { precio_unitario: { $lte: 900 } },
+                    { coloresDisponibles: "Negro" }
+                ]
+            },
+            {
+                "marca": { $not: { $regex: "OnePlus" } }
+            }
+        ]
+    },
+    {
+        nombre: 1,
+        descripcion: 1,
+        marca: 1,
+        coloresDisponibles: 1,
+        precio_unitario: 1,
+        _id: 1
+    }
+)
