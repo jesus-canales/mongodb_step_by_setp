@@ -1,0 +1,18 @@
+// Poner en uso la base de datos
+use ( "baticell_store" )
+
+// Listar los productos cuyo sistema operativo es Android 10
+// Sólo debe visualizarse los atributos: nombre, descripción, especificaciones, marca
+// y colores disponibles
+db.products.find(
+    { "especificaciones.sistema_operativo": "Android 10" }, // aquí se establece las condiciones
+    {
+        nombre: 1,
+        descripcion: 1,
+        marca: 1,
+        especificaciones: 1,
+        coloresDisponibles: 1,
+        _id: 0
+
+    } // aquí se establece que atributos se desean listar
+)
