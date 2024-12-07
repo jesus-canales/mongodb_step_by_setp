@@ -17,3 +17,27 @@ db.clients.find(
         _id: 0
     }
 )
+
+// Listar nombres, apellidos, email, suscripciones y puntos obtenidos por cliente
+// donde la direccion contiene San Luis o San Borja 
+// además tienen puntos menor o igual a 250
+db.clients.find(
+    {
+        $and: [
+            {
+                direccion: { $regex: "San Luis|San Borja" }
+            },
+            {
+                puntos: { $lte: 250 }
+            }
+        ]
+    },
+    {
+        nombre: 1,
+        apellidos: 1,
+        email: 1,
+        suscripciones: 1,
+        puntos: 1,
+        _id: 0
+    }
+)
