@@ -1,0 +1,11 @@
+// Poner base de datos en uso
+use ( "UrbanStyle_store" )
+
+// Listar las colecciones de la BD
+db.getCollectionNames()
+
+// Listar documentos de productos
+db.products.find()
+
+// Obtener cantidad de documentos products
+db.products.find().count()
