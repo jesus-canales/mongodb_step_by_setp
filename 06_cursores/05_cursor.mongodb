@@ -2,7 +2,7 @@
 use ( "UrbanStyle_store" )
 
 // Obtener listado de prendas cuyo precio es mayor e igual a 50
-var miCursor = db.products.find( { precio: { $gte: 50 } } )
+var miCursor = db.products.find( { precio: { $lte: 50 } } )
 
 // contador
 var countNino = 0;
@@ -21,10 +21,26 @@ while ( miCursor.hasNext() ) {
     if ( products.tipo === "Niño" ) {
         countNino++;
         productosNino.push(products);
+    } else if ( products.tipo === 'Caballero' ) {
+        countCaballero++;
+        productosCaballero.push(products);
+    } else if ( products.tipo === 'Dama' ) {
+        countDama++;
+        productosDama.push(products);
     }
 }
 
 print ( '*************************')
 print ( 'Cantidad de prendas para Niño: ' + countNino );
 print (  'Prendas: ', productosNino);
+print ( '*************************')
+
+print ( '*************************')
+print ( 'Cantidad de prendas para Caballero: ' + countCaballero );
+print (  'Prendas: ', productosCaballero);
+print ( '*************************')
+
+print ( '*************************')
+print ( 'Cantidad de prendas para Dama: ' + countDama );
+print (  'Prendas: ', productosDama);
 print ( '*************************')
