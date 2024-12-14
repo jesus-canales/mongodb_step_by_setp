@@ -1,0 +1,48 @@
+// Poner base de datos en uso
+use("UrbanStyle_store")
+
+// Crear una variables con los datos solicitados
+var misDatos = db.products.find(
+    { precio: { $gte: 50 } },
+    {
+        nombre: 1, marca: 1, precio: 1, tipo: 1, sucursal: 1, _id: 0
+    }
+)
+
+// Convertir misDatos a una variable de tipo array
+var prendasArray = misDatos.toArray();
+
+// contador
+var countNino = 0;
+var countCaballero = 0;
+var countDama = 0;
+
+// tipo array para almacenar datos de documentos
+var productosNino = [];
+var productosCaballero = [];
+var productosDama = [];
+
+prendasArray.forEach(function (products) {
+    if (products.tipo === "Niño") {
+        countNino++;
+        productosNino.push(products);
+    } else if (products.tipo === 'Caballero') {
+        countCaballero++;
+        productosCaballero.push(products);
+    } else if (products.tipo === 'Dama') {
+        countDama++;
+        productosDama.push(products);
+    }
+});
+
+// Ordena los productos por precio en orden ascendente
+productosNino.sort((a, b) => a.precio - b.precio);
+productosCaballero.sort((a,b) => a.precio - b.precio);
+productosDama.sort((a, b) => a.precio - b.precio);
+
+// Imprimir los resultados
+print ( '*************************')
+print ('Cantidad de prendas para niños: ' + countNino)
+print ('Prendas:');
+productosNino.forEach( product => print(JSON.stringify(product)))
+print ( '*************************')
