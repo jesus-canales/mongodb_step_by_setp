@@ -1,0 +1,13 @@
+// Poner base de datos en uso
+use("UrbanStyle_store")
+
+// Listar productos por tipo y listar sólo nombre del primero de ellos
+db.products.aggregate([
+    { $sort: { fechaRegistro: 1 } }, // ordenación ascendente
+    {
+        $group: {
+          _id: "$tipo", // bajo que atributo se va a ordenar
+          primerProducto: { $first: "$nombre" } // que se va a mostrar
+        }
+    }
+])
