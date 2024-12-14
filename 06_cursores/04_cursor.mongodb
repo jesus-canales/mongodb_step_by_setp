@@ -1,0 +1,11 @@
+// Poner base de datos en uso
+use ( "UrbanStyle_store" )
+
+// Obtener número de prendas cuyo precio es mayor o igual a 50
+// y sea para Niño
+var contarNino = db.products.countDocuments(
+    { precio: { $gte: 50 }, tipo: "Niño" }
+)
+
+// El número de prendas obtenidas es:
+print ( 'El número de prendas obtenidas es: ' + contarNino )
