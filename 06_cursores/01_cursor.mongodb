@@ -1,0 +1,12 @@
+// Poner base de datos en uso
+use ( "UrbanStyle_store" )
+
+// Variables = almacenamiento temporal de datos
+var miCursor = db.products.find();
+
+// Listar el nombre de producto y la sucursal en la que se encuenta
+while ( miCursor.hasNext() ) {
+    var products = miCursor.next();
+    print( products.nombre + ' se encuentra en la ' + products.sucursal )
+}
+
