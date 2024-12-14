@@ -3,7 +3,7 @@ use("UrbanStyle_store")
 
 // Crear una variables con los datos solicitados
 var misDatos = db.products.find(
-    { precio: { $gte: 50 } },
+    { precio: { $lte: 80 } },
     {
         nombre: 1, marca: 1, precio: 1, tipo: 1, sucursal: 1, _id: 0
     }
@@ -36,7 +36,8 @@ prendasArray.forEach(function (products) {
 });
 
 // Ordena los productos por precio en orden ascendente
-productosNino.sort((a, b) => a.precio - b.precio);
+productosNino.sort((a, b) => a.precio - b.precio); // ordena de manera ascendente
+// productosNino.sort((a, b) => b.precio - a.precio); // ordena de manera descendente
 productosCaballero.sort((a,b) => a.precio - b.precio);
 productosDama.sort((a, b) => a.precio - b.precio);
 
