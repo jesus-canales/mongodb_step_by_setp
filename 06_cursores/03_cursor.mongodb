@@ -1,0 +1,10 @@
+// Poner base de datos en uso
+use ( "UrbanStyle_store" )
+
+// Obtener la cantidad de productos (prendas) para caballeros
+var productosCaballero = db.products.countDocuments(
+    { tipo: "Caballero"}
+)
+
+// Imprime el resultado
+print( 'La cantidad de prendas para caballero es: ' + productosCaballero)
