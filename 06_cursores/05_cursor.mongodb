@@ -1,0 +1,30 @@
+// Poner base de datos en uso
+use ( "UrbanStyle_store" )
+
+// Obtener listado de prendas cuyo precio es mayor e igual a 50
+var miCursor = db.products.find( { precio: { $gte: 50 } } )
+
+// contador
+var countNino = 0;
+var countCaballero = 0;
+var countDama = 0;
+
+// tipo array para almacenar datos de documentos
+var productosNino = [];
+var productosCaballero = [];
+var productosDama = [];
+
+// Ahora debemos hacer la iteracción
+while ( miCursor.hasNext() ) {
+    var products = miCursor.next();
+
+    if ( products.tipo === "Niño" ) {
+        countNino++;
+        productosNino.push(products);
+    }
+}
+
+print ( '*************************')
+print ( 'Cantidad de prendas para Niño: ' + countNino );
+print (  'Prendas: ', productosNino);
+print ( '*************************')
