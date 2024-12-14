@@ -1,0 +1,10 @@
+// Poner base de datos en uso
+use ( "UrbanStyle_store" )
+
+// Obtener cantidad de elementos products
+var cantidadProductos = db.products.find().count()
+print ( 'La cantidad actual de productos es: ' + cantidadProductos )
+
+// Se recomienda utilizar countDocuments()
+var cantidadProductos = db.products.countDocuments()
+print ( 'La cantidad actual de productos es: ' + cantidadProductos )
